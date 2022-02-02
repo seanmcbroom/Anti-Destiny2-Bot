@@ -14,9 +14,8 @@ client.on('ready', () => {
                 .then((members) => {
                     members.forEach((member) => {
                         if (member.presence && member.presence.activities) {
-                            member.presence.activities.forEach(activitie => {
-                                console.log(`${member.user.username} - ${activitie.name}`)
-                                if (activitie.name.toLowerCase() == "destiny 2") {
+                            member.presence.activities.forEach(activity => {
+                                if (activity.name.toLowerCase() == "valorant") {
                                     member.voice.disconnect()
                                         .catch(console.log);
                                 }
